@@ -1,0 +1,15 @@
+Loaded 2035 rows x 18 cols
+Dropped 35 duplicate trade_ids (exact repeats of the same trade).
+Standardized symbol (btcusdt, BTC/USDT, BTC-USDT) -> BTCUSDT: same instrument.
+Standardized side to lowercase buy/sell.
+Converted price text ($, commas) to float.
+Parsed 3 timestamp formats (ISO, DD/MM/YYYY, Unix) to one datetime (UTC assumed). Unparseable: 0
+Sorted by time.
+Dropped 70 rows missing bid_qty_1 / ask_price_1 / quantity (cannot be reliably recovered).
+Dropped 6 rows with zero quantity (no real trade).
+Dropped 10 crossed-book rows (bid >= ask: invalid snapshot).
+Outliers/missing/negative price: 39 rows; repaired 38 from the order book (buy->ask_1, sell->bid_1).
+Dropped 1 bad-price rows with no side label (cannot tell whether to use bid or ask).
+Inferred 12 missing side labels (price at ask -> buy, else sell).
+Final clean rows: 1913
+Time split: train 16 candles / test 7 candles (no shuffling).
